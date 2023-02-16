@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Server</title>
+  </head>
+  <body>
+    <h4>Make your calls here</h4>
+    <button onclick="getResponse()">API CALL</button>
+
+    <script>
+      const getResponse = () => {
+        let initial = Date.now();
+        fetch("/data")
+          .then((res) => res.json())
+          .then((res) => {
+            console.log(res);
+            console.log(Date.now() - initial);
+          });
+      };
+    </script>
+  </body>
+</html>
